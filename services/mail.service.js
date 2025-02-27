@@ -9,9 +9,8 @@ export const mailService = {
   get,
   remove,
   save,
+  update,
   sendMail,
-  getReadStats,
-  getSenderStats,
   getEmptyMail,
   getDefaultFilter,
   getFilterFromSearchParams,
@@ -44,6 +43,10 @@ function save(mail) {
   } else {
     return storageService.post(MAIL_KEY, mail);
   }
+}
+
+function update(mail) {
+  return storageService.put(MAIL_KEY, mail);
 }
 
 function sendMail(mail) {
@@ -83,6 +86,30 @@ function _createMails() {
     mails.push(
       _createMail(
         "Miss you!",
+        "Hey [שם], It feels like ages since we last talked! I just wanted to drop you a quick line to say I've been thinking about you and missing our chats. How have you been? Anything exciting happening in your world? Let's catch up soon. Maybe we can grab coffee or hop on a call? Talk to you later,",
+        "momo@momo.com",
+        "user@appsus.com"
+      )
+    );
+    mails.push(
+      _createMail(
+        "Your  order is on the way",
+        "Would love to catch up sometimes",
+        "ali-exspres.com",
+        "user@appsus.com"
+      )
+    );
+    mails.push(
+      _createMail(
+        "Miss you!",
+        "Would love to catch up sometimes",
+        "momo@momo.com",
+        "user@appsus.com"
+      )
+    );
+    mails.push(
+      _createMail(
+        "Miss you!",
         "Would love to catch up sometimes",
         "momo@momo.com",
         "user@appsus.com"
@@ -113,32 +140,3 @@ function _createMail(subject, body, from, to) {
   mail.id = utilService.makeId();
   return mail;
 }
-
-// // סטטיסטיקות
-// function getReadStats() {
-//   return storageService.query(MAIL_KEY).then((mails) => {
-//     const readCount = mails.filter((mail) => mail.isRead).length;
-//     const total = mails.length;
-//     return { read: readCount, unread: total - readCount };
-//   });
-// }
-
-// function getSenderStats() {
-//   return storageService.query(MAIL_KEY).then((mails) => {
-//     const senderCountMap = _getMailCountBySenderMap(mails);
-//     const data = Object.keys(senderCountMap).map((sender) => ({
-//       title: sender,
-//       value: Math.round((senderCountMap[sender] / mails.length) * 100),
-//     }));
-//     return data;
-//   });
-// }
-
-// function _getMailCountBySenderMap(mails) {
-//   const senderCountMap = mails.reduce((map, mail) => {
-//     if (!map[mail.from]) map[mail.from] = 0;
-//     map[mail.from]++;
-//     return map;
-//   }, {});
-//   return senderCountMap;
-// }
