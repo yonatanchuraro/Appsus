@@ -1,0 +1,77 @@
+.mail-index {
+  display: grid;
+  grid-template-columns: 10vw auto;
+}
+
+.mail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  background-color: #f2f6fc;
+}
+.mail-item button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.mail-item:hover {
+  background-color: #f1f3f4;
+}
+
+.unread {
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+.mail-info {
+  display: flex;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.mail-from {
+  width: 20%;
+  color: #202124;
+}
+
+.mail-subject {
+  width: 30%;
+  color: #202124;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.mail-preview {
+  width: 30%;
+  color: #5f6368;
+}
+
+.mail-date {
+  width: 10%;
+  text-align: right;
+  color: #5f6368;
+}
+
+.mail-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}

@@ -1,0 +1,15 @@
+ul {
+  list-style: none;
+}
+.side-nav {
+  background-color: #f8fafd;
+  height: 100vh;
+  font-size: 20px;
+
+  line-height: 20px;
+  text-align: start;
+  letter-spacing: normal;
+}
+/* .side-nav :link {
+  border-bottom: 1px solid black;
+} */

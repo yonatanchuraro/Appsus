@@ -1,0 +1,10 @@
+.mail-list {
+  border-radius: 8px !important;
+  overflow: hidden; /* כדי למנוע חריגה של תוכן מהפינות */
+  /* ... שאר העיצוב שלך ... */
+}
+
+.mail-item {
+  border-radius: 0; /* הסרת border-radius מפריטים בודדים */
+  /* ... שאר העיצוב שלך ... */
+}
