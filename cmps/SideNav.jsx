@@ -3,20 +3,24 @@ const { Link } = ReactRouterDOM;
 
 export function SideNav({ mails }) {
   const [unreadCount, setUnreadCount] = useState(0);
+
   useEffect(() => {
     if (mails) {
-      setUnreadCount(getUnreadCount(mails));
+      setUnreadCount(mails.filter((mail) => !mail.isRead).length);
     }
   }, [mails]);
 
-  function getUnreadCount(mails) {
-    return mails.filter((mail) => !mail.isRead).length;
-  }
   return (
     <nav className="side-nav">
       <ul>
         <li>
-          <Link to="/mail">Inbox ({unreadCount})</Link>
+          <Link to="stared">stared</Link>
+        </li>
+        <li>
+          <Link to="index">Index ({unreadCount})</Link>
+        </li>
+        <li>
+          <Link to="sent">Sent</Link>
         </li>
       </ul>
     </nav>

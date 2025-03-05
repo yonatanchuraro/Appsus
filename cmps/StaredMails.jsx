@@ -1,13 +1,12 @@
-import { MailDetails } from "../pages/MailDetails.jsx";
 const { Link, useOutletContext } = ReactRouterDOM;
-export function MailList() {
+export function StaredMails() {
   const { mails, onRemoveMail, onReadMail, onStared } = useOutletContext();
   if (!mails.length) return <div>אין מיילים</div>;
 
   return (
     <ul className="mail-list">
       {mails
-        .filter((mail) => !mail.isSent)
+        .filter((mail) => mail.isStared)
         .map((mail) => (
           <li
             key={mail.id}
@@ -20,13 +19,12 @@ export function MailList() {
                 <span className="material-symbols-outlined">star</span>
               )}
             </button>
+
             <Link to={`/mail/${mail.id}`} className="mail-list">
               <div className="mail-info">
                 <span className="mail-from">{mail.from}</span>
                 <span className="mail-subject">{mail.subject}</span>
-                {/* <span className="mail-preview">
-                  {mail.body.slice(0, 50)}...
-                </span> */}
+
                 <span className="mail-date">
                   {new Date(mail.sentAt).toLocaleDateString()}
                 </span>

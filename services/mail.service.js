@@ -62,6 +62,7 @@ function getEmptyMail(subject = "", body = "", from = "", to = "") {
     subject,
     body,
     isRead: false,
+    isStared: false,
     isSent: false,
     sentAt: null,
     removedAt: null,

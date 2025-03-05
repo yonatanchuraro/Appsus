@@ -8,7 +8,7 @@
 @import "./cmps/AppHeader.css";
 @import "./cmps/MailIndex.css";
 @import "./cmps/SideNav.css";
-
+@import "./cmps/ComposeMail.css";
 @import "./apps/note/NoteIndex.css";
 @import "./apps/mail/MailIndex.css";
 @import "./apps/mail/MailList.css";

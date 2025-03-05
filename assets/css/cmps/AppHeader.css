@@ -1,8 +1,14 @@
 .app-header {
   height: 48px;
+
   display: flex;
+
   justify-content: space-between;
+
+  /* justify-items: right; */
+
   padding: 1em;
+
   background: #f8fafd;
 }
 
@@ -12,6 +18,8 @@ nav a {
 
 nav a.active {
   color: var(--color1);
+
   font-weight: bold;
+
   text-decoration: overline;
 }
