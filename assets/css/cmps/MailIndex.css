@@ -14,7 +14,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  height: 40px;
+  padding-block: 10px;
   border-bottom: 1px solid #ddd;
   transition: background-color 0.2s ease;
   cursor: pointer;

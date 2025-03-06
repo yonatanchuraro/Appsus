@@ -1,1 +1,53 @@
+.compose-mail {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
 
+.compose-mail h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.compose-mail form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.compose-mail input,
+.compose-mail textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.compose-mail textarea {
+  resize: none;
+  height: 100px;
+}
+
+.compose-mail button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.compose-mail button:hover {
+  background: #0056b3;
+}

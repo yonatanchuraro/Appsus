@@ -1,7 +1,12 @@
 const { Link, useOutletContext } = ReactRouterDOM;
 export function StaredMails() {
   const { mails, onRemoveMail, onReadMail, onStared } = useOutletContext();
-  if (!mails.length) return <div>אין מיילים</div>;
+  if (mails.length === 0)
+    return (
+      <div>
+        <h3>No mails starred....</h3>
+      </div>
+    );
 
   return (
     <ul className="mail-list">
@@ -14,7 +19,7 @@ export function StaredMails() {
           >
             <button onClick={() => onStared(mail.id)}>
               {mail.isStared ? (
-                <span className="material-symbols-outlined">star_half</span>
+                <span className="material-icons-outlined">star</span>
               ) : (
                 <span className="material-symbols-outlined">star</span>
               )}

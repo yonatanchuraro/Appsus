@@ -14,13 +14,25 @@ export function SideNav({ mails }) {
     <nav className="side-nav">
       <ul>
         <li>
-          <Link to="stared">stared</Link>
+          <Link to="compose">
+            <span className="material-symbols-outlined">edit</span> Compose
+          </Link>
         </li>
         <li>
-          <Link to="index">Index ({unreadCount})</Link>
+          <Link to="inbox">
+            <span className="material-symbols-outlined">inbox</span> Inbox (
+            {unreadCount})
+          </Link>
         </li>
         <li>
-          <Link to="sent">Sent</Link>
+          <Link to="stared">
+            <span className="material-symbols-outlined">star</span> Starred
+          </Link>
+        </li>
+        <li>
+          <Link to="sent">
+            <span className="material-symbols-outlined">send</span> Sent
+          </Link>
         </li>
       </ul>
     </nav>

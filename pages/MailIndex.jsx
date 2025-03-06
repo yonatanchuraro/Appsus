@@ -42,6 +42,7 @@ export function MailIndex() {
         mail.id === mailId ? { ...mail, isStared: !mail.isStared } : mail
       )
     );
+    mailService.save(mailId);
   }
 
   if (!mails) return <div>Loading...</div>;

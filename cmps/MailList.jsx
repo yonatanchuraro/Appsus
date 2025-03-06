@@ -15,7 +15,7 @@ export function MailList() {
           >
             <button onClick={() => onStared(mail.id)}>
               {mail.isStared ? (
-                <span className="material-symbols-outlined">star_half</span>
+                <span className="material-icons-outlined ">star</span>
               ) : (
                 <span className="material-symbols-outlined">star</span>
               )}
@@ -24,9 +24,7 @@ export function MailList() {
               <div className="mail-info">
                 <span className="mail-from">{mail.from}</span>
                 <span className="mail-subject">{mail.subject}</span>
-                {/* <span className="mail-preview">
-                  {mail.body.slice(0, 50)}...
-                </span> */}
+
                 <span className="mail-date">
                   {new Date(mail.sentAt).toLocaleDateString()}
                 </span>

@@ -50,9 +50,12 @@ function update(mail) {
 }
 
 function sendMail(mail) {
+  mail.id = utilService.makeId();
   mail.sentAt = Date.now();
   mail.isRead = false;
-  return save(mail);
+  mail.isSent = true;
+
+  return storageService.post(MAIL_KEY, mail);
 }
 
 function getEmptyMail(subject = "", body = "", from = "", to = "") {
